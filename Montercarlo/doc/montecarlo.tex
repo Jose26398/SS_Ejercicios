@@ -105,7 +105,69 @@
 
 \setlength{\parskip}{1em}
 
+
 \section{Introducción}
+
+Una fábrica de chocolate recibe todos los años para diciembre un pedido de huevos de Pascua. Por razones estacionales, resulta más barato comprar el
+chocolate necesario durante el mes de \textbf{agosto}, asi que la empresa compra una gran cantidad de chocolate este mes, y si es necesario comprar más,
+se realiza otro \textbf{pedido adicional} para satisfacer de forma exacta toda la demanda. Por otro lado, si el chocolate comprado en agosto sobra, será
+donado a comedores de escuelas.
+
+También tenemos los siguientes datos sobre precios y cantidades:
+\begin{itemize}
+	\item Cada huevo de pascua emplea 250 gramos de chocolate.
+	\item El precio del chocolate en agosto es de 1 euro por kilo.
+	\item El precio del chocolate en diciembre es de 1.5 euros por kilo.
+	\item El precio de venta de los huevos de pascua es de 0.60 euros la unidad.
+\end{itemize}
+
+La demanda de huevos al año sigue una distribucion triangular, con valor más probable es \textbf{c = 2600 unidades}, el menor valor es \textbf{a = 2000
+unidades} y mayor valor es \textbf{b = 3000 unidades}. Su función de densidad es la siguiente:
+\begin{equation*}
+	f(x)=
+	\left\{\begin{matrix}
+	\frac{2(x-a)}{(b-a)(c-a)} & a\leq x \leq c\\ 
+	\frac{2(b-x)}{(b-a)(b-c)} & c\leq x \leq b 
+	\end{matrix}\right.
+\end{equation*}
+
+Con esta información tendremos que construir un modelo de simulación 
+
+
+
+\section{Implementación}
+
+
+La implementación de este generador triangular ya se nos proporcionará en el enunciado. Primero necesitamos un primer generador de números aleatorios:
+\begin{lstlisting}
+float uniforme(){
+	float u;
+	u = (float) random();
+	u = u/(float)(RAND_MAX+1.0);
+	return u;
+}
+\end{lstlisting}
+
+Y después lo utilizamos en la función de distribución comentada anteriormente:
+\begin{lstlisting}
+int generademanda(){
+	float u, x;
+	u = uniforme();
+	
+	if (u < (c-a)/(b-a))
+		x = a+sqrt((b-a)*(c-a)*u);
+	else
+		x = b-sqrt((b-a)*(b-c)*(1-u));
+	
+	return (int) x; // Se convierte a entero porque es la demanda
+                  // de huevos de pascua
+}
+\end{lstlisting}
+
+
+
+
+
 
 
 \end{document}
