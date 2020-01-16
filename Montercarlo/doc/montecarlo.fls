@@ -3,8 +3,8 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT montecarlo.tex
-OUTPUT montecarlo.log
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.tex
+OUTPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -96,9 +96,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-INPUT montecarlo.aux
-INPUT montecarlo.aux
-OUTPUT montecarlo.aux
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.aux
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.aux
+OUTPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -111,17 +111,17 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT montecarlo.out
-INPUT montecarlo.out
-INPUT montecarlo.out
-INPUT montecarlo.out
-OUTPUT montecarlo.pdf
-INPUT ./montecarlo.out
-INPUT ./montecarlo.out
-OUTPUT montecarlo.out
-INPUT img/ugr.png
-INPUT ./img/ugr.png
-INPUT ./img/ugr.png
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+OUTPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.pdf
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+OUTPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/img/ugr.png
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/img/ugr.png
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/img/ugr.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1095.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1440.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc2488.tfm
@@ -137,15 +137,15 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
-INPUT img/etsiit.jpeg
-INPUT ./img/etsiit.jpeg
-INPUT ./img/etsiit.jpeg
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/img/etsiit.jpeg
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/img/etsiit.jpeg
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/img/etsiit.jpeg
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
-INPUT montecarlo.toc
-INPUT montecarlo.toc
-OUTPUT montecarlo.toc
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.toc
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.toc
+OUTPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
@@ -155,9 +155,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-INPUT montecarlo.aux
-INPUT ./montecarlo.out
-INPUT ./montecarlo.out
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.aux
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/Universidad/SS (Simulacion de Sistemas)/SS_Ejercicios/Montercarlo/doc/montecarlo.out
+INPUT /home/jose/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk
 INPUT /home/jose/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk
 INPUT /home/jose/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk
 INPUT /home/jose/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk

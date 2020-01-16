@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 		
 		// Obtener ganancia media y desviacion tipica
 		double ganancia_esperada = sum/veces,
-				 desviacion = sqrt((sum2-veces*ganancia_esperada*ganancia_esperada)/(veces - 1));
+			   desviacion = sqrt((sum2-veces*ganancia_esperada*ganancia_esperada)/(veces - 1));
 
 		if (ganancia_esperada > ganancia_maxima){
 			ganancia_maxima = ganancia_esperada;
