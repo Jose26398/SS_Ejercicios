@@ -316,65 +316,69 @@ sumatorias en sus variables correspondientes.
 \newpage
 \section{Experimentación y análisis del modelo}
 
-Vamos a ejecutar nuestro modelo con un número alto de iteracciones, por ejemplo 10000, ya que su ejecución es bastante rápida. Cuantas más iteracciones
+Vamos a ejecutar nuestro modelo con un número alto de iteracciones, por ejemplo 1000, ya que su ejecución es bastante rápida. Cuantas más iteracciones
 pongamos, más fiel a la realidad será nuestro modelo, teniendo siempre en cuenta la aleatoriedad del generador. Estos son los resultados que hemos
 obtenido:
+
 \begin{lstlisting}
 
-	$ ./montecarlo
-	s: 2000, ganancia: 829.460400, desv: 33.825544
-	s: 2001, ganancia: 829.396200, desv: 33.503580
-	s: 2002, ganancia: 829.556500, desv: 33.546507
-	s: 2003, ganancia: 829.930000, desv: 33.295441
-	s: 2004, ganancia: 829.995900, desv: 33.459098
-
-	............
-
-	s: 2996, ganancia: 795.998700, desv: 88.730445
-	s: 2997, ganancia: 795.683900, desv: 88.670787
-	s: 2998, ganancia: 798.665700, desv: 90.704331
-	s: 2999, ganancia: 798.103000, desv: 89.634769
-	s: 3000, ganancia: 796.020700, desv: 88.600780
-
-	Valor de x: 0.600000, valor de y1: 0.250000, valor de
-	y2: 0.375000, numero de veces: 10000
-	Valor maximo de ganancia: 883.158100 || s --> 2496
+	Tiempo clientes: 25572.724082 y clientes atendidos: 378
+	Tiempo clientes: 8127.702767 y clientes atendidos: 410
+	Tiempo clientes: 23624.744645 y clientes atendidos: 424
+	Tiempo clientes: 17920.444762 y clientes atendidos: 377
+	
+	..................
+	
+	Tiempo clientes: 20845.240843 y clientes atendidos: 370
+	Tiempo clientes: 26034.568622 y clientes atendidos: 409
+	Tiempo clientes: 18660.893068 y clientes atendidos: 373
+	Tiempo clientes: 33443.957111 y clientes atendidos: 361
+	
+	INFORME ->
+	Numero de simulaciones: 1000
+	Tiempo medio de estancia: 47.373443      desviacion: 14.080467
 	
 \end{lstlisting}
+	
+Como podemos ver, los tiempos medios en el servidor rondan los \textbf{47 segundos}. Puede parecer demasiado, ya que los tiempos que tardan en los
+servicios son aleatorios exponenciales de 0.8 y 1.2 segundos; sin embargo, este valor tiene sentido, ya que en el servidor B se hace cuello de botella
+al tardar un poco más que en el A. Esto hace que los clientes se acumulen en las colas y, por tanto, que el tiempo total del servidor aumente.
 
-Como podemos ver, el resultado con el que hemos obtenido una mayor ganancia ha sido \textbf{883 kg} de chocolate comprado en agosto. Este valor es
-bastante lógico por dos razones. La primera es que es un valor cercano al pico de la función triangular (que es b = 2600), y por otra parte, se nos ha
-quedado un poco por debajo de éste debido a que se penaliza más el tener que pagar un sobrante excesivo, a volver a comprar en diciembre hasta llegar a
-la cantidad justa de chocolate deseado.
+Ahora trataremos de reducir el tiempo medio de espera a 10 minutos, únicamente cambiando el tiempo del servidor B. Realizaremos varias ejecuciones con
+distintos tiempos, bajando el exponencial a 1.2 y viendo cual es el valor límite en el que cambia. Este ha sido el resultado:
 
-Si ejecutamos varias veces más, vemos como los valores de ganancia máximo se mantienen en un rango cercano.
 \begin{lstlisting}
-
-	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
-	numero de veces: 10000
-	Valor maximo de ganancia: 883.370100 || s --> 2495
-
-	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
-	numero de veces: 10000
-	Valor maximo de ganancia: 883.164300 || s --> 2460
-
-	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
-	numero de veces: 10000
-	Valor maximo de ganancia: 883.170200 || s --> 2467
 	
-	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
-	numero de veces: 10000
-	Valor maximo de ganancia: 883.512100 || s --> 2498
+	INFORME ->
+	Tiempo en servidor B: exponencial 1.1		Numero de simulaciones: 1000
+	Tiempo medio de estancia: 31.962392      desviacion: 12.615150
 
-	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
-	numero de veces: 10000
-	Valor maximo de ganancia: 883.213600 || s --> 2483
-		
+	INFORME ->
+	Tiempo en servidor B: exponencial 1.0		Numero de simulaciones: 1000
+	Tiempo medio de estancia: 19.010502      desviacion: 8.978181
+
+	INFORME ->
+	Tiempo en servidor B: exponencial 0.9		Numero de simulaciones: 1000
+	Tiempo medio de estancia: 10.840208      desviacion: 4.544627
+
+	INFORME ->
+	Tiempo en servidor B: exponencial 0.85		Numero de simulaciones: 1000
+	Tiempo medio de estancia: 8.949385       desviacion: 3.197139
+
 \end{lstlisting}
 
-Como conclusión, si tuvisemos que elegir una cantidad de chocolate que comprar en verano yo me decantaría por un valor cercano a los $s=2480$, o
-lo que es lo mismo, 2490 huevos por 250 gramos cada uno, \textbf{620 kilos de chcolate} comprados en agosto. Esto lo hacemos teniendo en cuenta
-las dos razones comentadas anteriormente y que es un valor medio a las distintas ejecuciones del modelo que hemos realizado.
+Vemos que el valor del tiempo en el servidor B, debería ser una exponencial entre \textbf{0.9} y \textbf{0.85} minutos, aproximadamente, ya que también
+tendremos en cuenta la aleatoriedad del sistema. Gracias a esto también podemos comprobar que en este servidor hay un cuello de botella, porque hemos
+reducido el tiempo considerablemente bajando este valor, cosa que con el servidor A no nos ocurre (a continuación pondré una ejecución con el tiempo de
+este reducido):
+
+\begin{lstlisting}
+	
+	INFORME ->
+	Tiempo en servidor A: exponencial 0.7		Numero de simulaciones: 1000
+	Tiempo medio de estancia: 46.150444      desviacion: 14.835318
+	
+\end{lstlisting}
 
 
 \end{document}

@@ -84,7 +84,7 @@ void llegada_cliente()
 	{
 		servidorA = OCUPADO;	
 		sucActual.suceso = SUCESO_SERVIDOR_A;
-		sucActual.tiempo = reloj + generador_exponencial(0.8);
+		sucActual.tiempo = reloj + generador_exponencial(0.7);
 		insertar_lsuc(sucActual);
 	}
 	else
@@ -106,7 +106,7 @@ void llegada_servidorA()
 	{
 		encolaA--;
 		sucActual.suceso = SUCESO_SERVIDOR_A;
-		sucActual.tiempo = reloj + generador_exponencial(0.8);
+		sucActual.tiempo = reloj + generador_exponencial(0.7);
 		insertar_lsuc(sucActual);
 	}
 	else
