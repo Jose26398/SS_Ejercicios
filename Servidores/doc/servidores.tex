@@ -107,90 +107,275 @@
 
 \section{Introducción}
 
-En esta práctica nos enfrentamos al modelo de ecosistema de Lotka-Volterra, el cual pretende estudiar el crecimiento entre dos especies
-relacionadas entre sí. De estas dos, una de ellas serán los \textbf{depredadores ($x$)} y la otra las \textbf{presas ($y$)}.
+En este ejercicio tenemos que implementar un sistema de colas con dos servidores, servidor A y B, dispuestos en serie. Primero se entra al servidor A,
+con un tiempo de espera exponencial de llegadas de 1 minutos. En este servidor se está un tiempo exponencial de 0.8 minutos, antes de pasar al servidor
+B. En el servidor B estamos también un tiempo exponencial de 1.2 minutos; y una vez pasados, salimos del sistema.
 
-Hay varias cosas a tener en cuenta en el modelo. Por ejemplo, en ausencia de presas, la población de depredadores disminuye; mientras que
-en ausencia de depredadores, la población de presas aumenta. Tampoco tendremos factores de autoinhibición. Las ecuaciones de crecimiento
-de ambas poblaciones se pueden describir de la siguiente forma:
-$$\frac{\partial x}{\partial t} = a_{11}x-a_{12}xy$$
-$$\frac{\partial y}{\partial t} = a_{21}xy-a_{22}y$$
+Inicialmente el sistema está vacío, las colas de cada uno de los servidores son colas FIFO y se quiere simular durante 8 horas.
 
-Los valores de $a_{11}$ y $a_{22}$ representan las tasas de crecimiento de cada una de las especies, y por otro lado, $a_12$ y $a_21$ son los
-factores de inhibición mutuos teniendo en cuenta a la otra población.
+Vamos a diseñar un modelo para este sistema, especificando los sucesos, el grafo, detallando las rutinas y, posteriormente, construir un programa y hacer
+pruebas para ver cómo funciona.
 
 
-\section{Programar modelo}
-El modelo anterior estará implementado en el archivo \textit{depredadores.cpp} adjuntado con la memoria. El programa partirá del pseudocódigo
-proporcionado y además se adaptará a las especificaciones comentadas. Dispondrá de dos métodos de derivación diferentes, uno sencillo utilizando
-Euler (aunque no sea recomendable), y otro utilizando el método de Runge-Kuta.
+\section{Grafo y especificación de sucesos}
 
-Los parámetros que le podremos pasar al programa será los 4 $a_{ij}$ comentados y los valores iniciales para los depredadores y las presas.
-Junto con este programa, también voy a adjuntar un script en python que, utilizando este modelo y los parámetros deseados, nos muestra una
-gráfica con la evolución de la población entre el instante inicial y el final.
+A continuación, vamos a mostrar el grafo de sucesos, con cada uno de los pasos que tiene que dar un cliente desde que entra hasta que sale, y también con el
+propio grafo simplificado:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{img/grafo.png}
+	\caption{Grafo de sucesos completo}
+\end{figure}
 
-A continuación, vamos a realizar varias pruebas de nuestro modelo para comprobar su funcionamiento.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{img/grafo-reducido.png}
+	\caption{Grafo de sucesos reducido}
+\end{figure}
+
+Ahora vamos a explicar cada uno de los sucesos detallando las rutinas, variables de inicialización y generador de informes. Lo primero que vamos a hacer será
+mostrar la estructura ($struct$) de nuestra lista de sucesos. Como podremos observar insertaremos el suceso y el tiempo en el que se ha producido:
+\begin{lstlisting}
+	/* Estructura de la lista */
+	typedef struct {
+		int suceso;
+		float tiempo;
+	} suc;
+	
+\end{lstlisting}
+
+También utilizaremos estas dos funciones para insertar elementos en la lista. Como será una lista ordenada por tiempo, la primera simplemente comparará uno con
+otro, y la segunda, insertará dependiendo del valor obtenido en la función anterior:
+\begin{lstlisting}
+
+	/* Funcion de comparacion */
+	bool compare(const suc &s1, const suc &s2)
+	{ return s1.tiempo < s2.tiempo; }
+
+
+	/* Inserta de forma ordenada un elemento en la lista de sucesos */
+	void insertar_lsuc(suc n)
+	{
+	lsuc.push_back(n);
+
+	// Mantener ordenada la lista por el tiempo de los sucesos
+	lsuc.sort(compare);
+	}
+	
+\end{lstlisting}
+
+\newpage
+Tras esto vamos a ver cómo se implementarán cada uno de los sucesos correspondientes a nuestro sistema:
+\begin{lstlisting}
+	/* Funcion del suceso llegada cliente */
+	void llegada_cliente()
+	{
+		insertar(tiempos_llegadas, reloj);
+
+		insertar(lsuc, llegada_cliente, sucActual, reloj+exp(1.0));
+
+		if (servidorA == LIBRE){
+			servidorA = OCUPADO;
+			insertar(lsuc, llegada_servidorA, sucActual, reloj+exp(0.8));
+		}
+		else
+			encolaA++;
+	}
+\end{lstlisting}
+
+\begin{lstlisting}
+	/* Funcion del suceso servidor A */
+	void llegada_servidorA()
+	{
+		if (encolaA > 0){
+			encolaA--;
+			insertar(lsuc, llegada_servidorA, sucActual, reloj+exp(0.8));
+		}
+		else{
+			servidorA = LIBRE;
+		}
+
+		if (servidorB == LIBRE){
+			servidorB = OCUPADO;
+			insertar(lsuc, llegada_servidorB, sucActual, reloj+exp(1.2));
+		}
+		else
+			encolaB++;
+	}
+\end{lstlisting}
+
+\begin{lstlisting}
+	/* Funcion del suceso servidor B */
+	void llegada_servidorB()
+	{
+		clientes_atendidos++;
+		tiempo_clientes_sistema += reloj - tiempo_ultima_llegada;
+
+		eliminar(tiempo_ultima_llegada);
+
+		if (encolaB > 0){
+			encolaB--;
+			insertar(lsuc, llegada_servidorB, sucActual, reloj+exp(1.2));
+		}
+		else
+			servidorB = LIBRE;
+	}
+\end{lstlisting}
+
+
+Por último, vamos a mostrar la inicialización de las variables de interés y el generador de informes:
+\begin{lstlisting}
+	/* Inicializacion de las variables de interes */
+	void inicializacion()
+	{
+		reloj = 0.0;
+		tiempo_parada = 60.0 * 8;
+		tiempo_clientes_sistema = 0.0;
+		encolaA = 0;
+		encolaB = 0;
+		clientes_atendidos = 0;
+		servidorA = LIBRE;
+		servidorB = LIBRE;
+	}
+
+\end{lstlisting}
+
+\begin{lstlisting}
+	/* El generador de informes se encarga de calcular la media y
+		 desviacion tipica de los valores obtenidos */
+	void generador_informes(int simulaciones)
+	{
+		double media = sum / simulaciones,
+				   desv = sqrt((sum2 - simulaciones * media * media) /
+									(simulaciones - 1));
+
+		// Mostrar resultados por pantalla
+		printf("\n\nINFORME ->");
+		printf("\nNumero de simulaciones: %d", simulaciones);
+		printf("\nTiempo medio de estancia: %f \t desviacion: %f\n\n", media, desv);
+	}
+\end{lstlisting}
+
+
+\section{Implementación del modelo}
+
+En este apartado anterior ya hemos explicado cómo funcionan cada uno de los sucesos, pero no hemos comentado cómo se pone en marcha ni cómo utilizamos
+el resto del modelo. Su funcionamiento es muy simnple. Lo primero que haremos será leer como parámetro del programa el número de simulaciones que vamos
+a realizar. Posteriormente, pondremos en marcha un bucle con este número de simulaciones y el siguiente contenido:
+\begin{lstlisting}
+
+	for(int i = 0; i < simulaciones; i++)
+	{
+		// printf("\nSimulacion %d ...",cont_simu);
+		inicializacion();
+		while(parar==false)	{
+			temporizacion();
+			suceso();
+		}
+	}
+
+\end{lstlisting}
+
+Como podemos observar, para cada simulación inicializamos las variables (excepto los tiempos medios de estancia y desviación típica) y comenzamos con
+la simulación del sistema. En ella ejecutamos las funciones de \textit{temporización()} y \textit{suceso()}, las cuales explicaremos a continuación.
+
+\begin{lstlisting}
+	/* Procedimiento temporizacion */
+	void temporizacion()
+	{
+	sucActual = lsuc.front();
+	lsuc.pop_front();
+	reloj = sucActual.tiempo;
+	}
+
+\end{lstlisting}
+
+Vemos que en esta función lo único que hacemos es actualizar el suceso actual al que esté primero en la lista, y también actualizamos el reloj con el
+tiempo que tenga este último suceso seleccionado.
+
+\begin{lstlisting}
+	/* Procedimiento suceso */
+	void suceso()
+	{
+	switch(sucActual.suceso)
+		{
+		case SUCESO_LLEGADA_CLIENTE: llegada_cliente(); break;
+		case SUCESO_SERVIDOR_A: llegada_servidorA(); break;
+		case SUCESO_SERVIDOR_B: llegada_servidorB(); break;
+		case SUCESO_FIN_SIMULACION: fin_simulacion(); break;
+		}
+	}
+	
+\end{lstlisting}
+
+En esta función elegimos el siguiente suceso a partir de lo obtenido en la función de \textit{temporizacion()}. Los sucesos que se pueden elegir son los
+que definimos en el apartdo anterior, más el suceso \textit{fin-simulacion()} que simplemente para la ejecución del bucle y guarda los valores de las
+sumatorias en sus variables correspondientes.
 
 
 \newpage
-\section{Experimentación inicial}
+\section{Experimentación y análisis del modelo}
 
-Podremos estimar las constantes de las ecuaciones con ayuda de las siguientes suposiciones:
-\begin{itemize}
-	\item Cada pareja de conejos engendra un promedio de 10 crías por año.
-	\item Cada zorro captura un promedio de 25 conejos por año.
-	\item La edad promedio de los zorros es de 5 años (20\% de los zorros muere anualmente).
-	\item En media, el número medio de zorros jóvenes que sobreviven es igual al número de conejos dividido por 25.
-\end{itemize}
+Vamos a ejecutar nuestro modelo con un número alto de iteracciones, por ejemplo 10000, ya que su ejecución es bastante rápida. Cuantas más iteracciones
+pongamos, más fiel a la realidad será nuestro modelo, teniendo siempre en cuenta la aleatoriedad del generador. Estos son los resultados que hemos
+obtenido:
+\begin{lstlisting}
 
-Con esto tenemos que los valores iniciales para cada una de las constantes son: $a_{11}=5$, $a_{12}=0.05$, $a_{21}=0.0004$ y $a_{22}=0.2$.
-Las poblaciones iniciales para los depredadores y las presas serán las siguientes:
-$$depredadores(x) = \frac{a_{22}}{a_{21}} = 100$$
-$$presas(y) = \frac{a_{11}}{a_{12}} = 500$$
+	$ ./montecarlo
+	s: 2000, ganancia: 829.460400, desv: 33.825544
+	s: 2001, ganancia: 829.396200, desv: 33.503580
+	s: 2002, ganancia: 829.556500, desv: 33.546507
+	s: 2003, ganancia: 829.930000, desv: 33.295441
+	s: 2004, ganancia: 829.995900, desv: 33.459098
 
-Utilizaremos el método de integración de Runge-Kuta, junto con un intervalo de cálculo de $h=0.1$. El resultado ha sido el siguiente:
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.65]{img/2-100-500.png}
-\caption{depredadores x->100,   presas y->510}
-\end{figure}
+	............
 
-Como podemos observar.............
+	s: 2996, ganancia: 795.998700, desv: 88.730445
+	s: 2997, ganancia: 795.683900, desv: 88.670787
+	s: 2998, ganancia: 798.665700, desv: 90.704331
+	s: 2999, ganancia: 798.103000, desv: 89.634769
+	s: 3000, ganancia: 796.020700, desv: 88.600780
 
-Vamos a distanciar progresivamente los valores de $x$ e $y$ para ver cómo evoluciona la población en esos casos. Probaremos aumentando las
-presas en 10, disminuyendo los depredadores en 10, haciendo las dos anteriores juntas, y aumentando en 50 las presas y disminuyendo en 50
-los depredadores. Las gráficas resultantes han sido las siguientes:
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.5\textwidth}
-	  \centering
-	  \includegraphics[scale=0.4]{img/2-100-510.png}
-	  \caption{x=100,  y=510}
-	\end{minipage}%
-	\begin{minipage}{0.5\textwidth}
-	  \centering
-	  \includegraphics[scale=0.4]{img/2-90-500.png}
-	  \caption{x=90,  y=510}
-	\end{minipage}
-\end{figure}
+	Valor de x: 0.600000, valor de y1: 0.250000, valor de
+	y2: 0.375000, numero de veces: 10000
+	Valor maximo de ganancia: 883.158100 || s --> 2496
+	
+\end{lstlisting}
 
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.5\textwidth}
-	  \centering
-	  \includegraphics[scale=0.4]{img/2-90-510.png}
-	  \caption{x=90,  y=510}
-	\end{minipage}%
-	\begin{minipage}{0.5\textwidth}
-	  \centering
-	  \includegraphics[scale=0.4]{img/2-50-550.png}
-	  \caption{x=50,  y=550}
-	\end{minipage}
-\end{figure}
+Como podemos ver, el resultado con el que hemos obtenido una mayor ganancia ha sido \textbf{883 kg} de chocolate comprado en agosto. Este valor es
+bastante lógico por dos razones. La primera es que es un valor cercano al pico de la función triangular (que es b = 2600), y por otra parte, se nos ha
+quedado un poco por debajo de éste debido a que se penaliza más el tener que pagar un sobrante excesivo, a volver a comprar en diciembre hasta llegar a
+la cantidad justa de chocolate deseado.
 
-En este caso, podemos ver que..........
+Si ejecutamos varias veces más, vemos como los valores de ganancia máximo se mantienen en un rango cercano.
+\begin{lstlisting}
+
+	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
+	numero de veces: 10000
+	Valor maximo de ganancia: 883.370100 || s --> 2495
+
+	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
+	numero de veces: 10000
+	Valor maximo de ganancia: 883.164300 || s --> 2460
+
+	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
+	numero de veces: 10000
+	Valor maximo de ganancia: 883.170200 || s --> 2467
+	
+	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
+	numero de veces: 10000
+	Valor maximo de ganancia: 883.512100 || s --> 2498
+
+	Valor de x: 0.600000, valor de y1: 0.250000, valor de y2: 0.375000,
+	numero de veces: 10000
+	Valor maximo de ganancia: 883.213600 || s --> 2483
+		
+\end{lstlisting}
+
+Como conclusión, si tuvisemos que elegir una cantidad de chocolate que comprar en verano yo me decantaría por un valor cercano a los $s=2480$, o
+lo que es lo mismo, 2490 huevos por 250 gramos cada uno, \textbf{620 kilos de chcolate} comprados en agosto. Esto lo hacemos teniendo en cuenta
+las dos razones comentadas anteriormente y que es un valor medio a las distintas ejecuciones del modelo que hemos realizado.
+
 
 \end{document}
-
-
 

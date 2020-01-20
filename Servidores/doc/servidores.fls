@@ -1,0 +1,197 @@
+PWD c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.tex
+OUTPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.log
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-spanish\spanish.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-spanish\spanish.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\txtbabel.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecrm1095.tfm
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.aux
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.aux
+OUTPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.aux
+INPUT C:\Program Files\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Program Files\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+OUTPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.pdf
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+OUTPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\ugr.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\ugr.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\ugr.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\ugr.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\ugr.png
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\eccc1095.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\eccc1440.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\eccc2488.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecbx1095.tfm
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\etsiit.jpeg
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\etsiit.jpeg
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\etsiit.jpeg
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\etsiit.jpeg
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\etsiit.jpeg
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecrm1440.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecbx1440.tfm
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.toc
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.toc
+OUTPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.toc
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo-reducido.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo-reducido.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo-reducido.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo-reducido.png
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\img\grafo-reducido.png
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecrm0900.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecrm0600.tfm
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy9.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr9.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi9.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\jknappen\ec\ecti1095.tfm
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.aux
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT c:\Users\Jose\Universidad\SS (Simulación de Sistemas)\SS_Ejercicios\Servidores\doc\servidores.out
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk
+INPUT C:\Users\Jose\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy9.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy9.pfb

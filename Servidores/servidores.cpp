@@ -54,26 +54,6 @@ void insertar_lsuc(suc n)
 }
 
 
-/* Busca un suceso y lo extrae si existe */
-bool busca_suceso(int tipo)
-{
-  int encontrado = false;
-  list<suc>::iterator itr;
-
-  for(itr=lsuc.begin(); itr!=lsuc.end() && encontrado==false; )
-  	{
-	if(((suc)(*itr)).suceso == tipo)
-		{
-		encontrado = true;
-		sucActual = *itr; 
-		itr = lsuc.erase(itr);
-		}
-	else itr++;
-	}
-  return encontrado;
-}
-
-
 float generador_exponencial(float media)
 {
   float u;
